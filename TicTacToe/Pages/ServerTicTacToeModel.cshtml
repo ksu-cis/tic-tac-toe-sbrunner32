@@ -5,7 +5,7 @@
 }
 
 <h2>ServerTicTacToe</h2>
-<form>
+<form action="POST">
     <div id="board" class="board">
         @for (int y = 0; y < 3; y++)
         {
@@ -14,7 +14,7 @@
             {
                 @if (Model.State[x, y] == 0)
                 {
-                        <input type="radio" name="move" id="cell-@x-@y" />
+                        <input type="radio" name="move" id="cell-@x-@y" value="@Model.Turn-@x-@y" />
   
                 }
                 else
