@@ -2,7 +2,21 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-var turn = "x";
+
+var form = docmunet.getElementsById("board");
+var cells = document.getElementsByClassName("cell");
+for (var i = 0; i < cells.length; i++) {
+    cells[i].addEventListener(event => {
+
+    }
+        
+        )
+}
+
+
+
+
+/*var turn = "x";
 
 function setTurn() {
     var turnElement = document.getElementById("turn");
@@ -62,3 +76,5 @@ for (i = 0; i < cells.length; i++) {
 }
 
 setTurn();
+*/
+
