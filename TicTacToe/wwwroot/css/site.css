@@ -6,6 +6,7 @@ body {
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
+/*
 form {
     display: block;
     width:302px;
@@ -49,4 +50,34 @@ form {
 .cell{
     width: 100px;
     height: 100px;
+}
+    */
+
+#board{
+    width: 400px;
+    display:grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+}
+
+#board >.square{
+    border: 1px solid gray;
+    width: 50px;
+    height: 50px;
+}
+
+#board > .red{
+    background-color: red;
+}
+
+#board > .black{
+    background-color: black;
+}
+
+.checker {
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 5px solid gray;
 }

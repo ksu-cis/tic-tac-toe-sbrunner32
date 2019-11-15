@@ -3,7 +3,7 @@
 
 // Write your Javascript code.
 
-var form = docmunet.getElementsById("board");
+/*var form = docmunet.getElementsById("board");
 var cells = document.getElementsByClassName("cell");
 for (var i = 0; i < cells.length; i++) {
     cells[i].addEventListener(event => {
@@ -11,6 +11,42 @@ for (var i = 0; i < cells.length; i++) {
     }
         
         )
+}*/
+var dragging;
+
+var squares = document.getElementsByClassName("square");
+for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('dragenter', onDragEnter);
+    squares[i].addEventListener('dragend', onDragEnd);
+    squares[i].addEventListener('dragstart', onDragStart);
+    squares[i].addEventListener('dragleave', onDragLeave);
+}
+
+function onDragEnter(event) {
+    if (event.target.children.length > 0) return;
+    if (event.target.classList.contains("checker")) return;
+    if (event.target.classList.contains("red")) return;
+    event.preventDefault();
+    event.target.style.backgroundColor = "yellow";
+}
+
+function onDragStart(event) {
+
+    dragging = {
+        x: event.target.dataset.x,
+        y: event.target.dataset.y
+    }
+    
+}
+
+function onDragEnd(event) {
+    
+    console.log(dragging);
+    // do something...
+}
+
+function onDragLeave(event) {
+    event.target.style.backgroundColor = null;
 }
 
 
